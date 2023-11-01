@@ -34,9 +34,9 @@ public class RepositoryForBD {
     public List<String> getProductName(String name) {
         var parameters = new HashMap<String, Object>();
         parameters.put("name", name);
-        var resultSet = namedParameterJdbcTemplate.query(queryScript,
+        var resultSet = namedParameterJdbcTemplate.queryForList(queryScript,
                 parameters,
-                (rs, rowNum) -> rs.getString("product_name"));
+                String.class);
         return resultSet;
     }
 }

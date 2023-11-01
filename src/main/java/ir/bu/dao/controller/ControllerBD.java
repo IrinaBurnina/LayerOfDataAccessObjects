@@ -1,6 +1,6 @@
 package ir.bu.dao.controller;
 
-import ir.bu.dao.service.Service;
+import ir.bu.dao.service.ServiceBD;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,15 +10,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-public class Controller {
-    private final Service service;
+public class ControllerBD {
+    private final ServiceBD serviceBD;
 
-    public Controller(Service service) {
-        this.service = service;
+    public ControllerBD(ServiceBD serviceBD) {
+        this.serviceBD = serviceBD;
     }
 
     @GetMapping("/fetch-product")
     public List<String> productName(@RequestParam("name") String name) {
-        return service.getProductName(name);
+        return serviceBD.getProductName(name);
     }
 }

@@ -1,14 +1,15 @@
 package ir.bu.dao.service;
 
 import ir.bu.dao.repository.RepositoryForBD;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@org.springframework.stereotype.Service
-public class Service {
+@Service
+public class ServiceBD {
     private final RepositoryForBD repository;
 
-    public Service(RepositoryForBD repository) {
+    public ServiceBD(RepositoryForBD repository) {
         this.repository = repository;
     }
 
